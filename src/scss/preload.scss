@@ -1,0 +1,83 @@
+@import "_colors";
+@import "_mixins";
+
+
+
+.preload {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(48.18% 24.84% at 50% 50%, #2A0227 0%, #170119 100%);
+  @include display-flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 10;
+
+  & .block{
+    margin-bottom: 45px;
+    position: relative;
+
+    & #counter{
+      @include fonts(600, 370px, 434px, rgba(100, 60, 90, 0.2));
+      text-transform: uppercase;
+    }
+
+    & #figure{
+      position: absolute;
+      bottom: -3px;
+      background-size: cover;
+      z-index: 2;
+    }
+
+    & .headphone{
+      width: 204px;
+      height: 279px;
+      left: calc(50% - 102px);
+      filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+      background-image: url("../assets/img/headphone.png");
+    }
+
+    & .camera{
+      width: 262px;
+      height: 287px;
+      left: calc(50% - 131px);
+      filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.38833));
+      transform: rotate(-2deg);
+      background-image: url("../assets/img/camera.png");
+    }
+
+    & .star{
+      width: 330px;
+      height: 330px;
+      left: calc(50% - 165px);
+      filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      background-image: url("../assets/img/star.png");
+    }
+
+  }
+
+  & .loading{
+    @include fonts(700, 14px, 15px, $yellow);
+    font-family: 'Archivo', sans-serif;
+  }
+
+}
+
+.hidden_preload{
+  animation-duration: 1s;
+  animation-name: slide_out;
+  height: 0;
+}
+
+@keyframes slide_out {
+  from {
+    height: 100vh;
+  }
+
+  to {
+    //height: 0!important;
+    height: 0;
+  }
+}

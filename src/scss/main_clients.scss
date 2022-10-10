@@ -1,0 +1,225 @@
+@import "_colors";
+@import "_mixins";
+
+.clients {
+  background: #ffecee;
+  padding: 25px 3.8% 68px 3.8%;
+  overflow: hidden;
+  z-index: 11;
+  //height: 150vh!important;
+
+  & .content {
+    width: 100%;
+    height: 100%;
+
+    margin-top: -47px;
+    padding-top: 30px;
+    @include display-flex(space-between, flex-start);
+    gap: 8%;
+    overflow: scroll;
+
+    & .content_left {
+      width: 22%;
+      top: 72px;
+      position: sticky;
+
+      & h2 {
+        font-family: ArchivoBlack, sans-serif;
+        @include fonts(700, 40px, 40px, #383030);
+      }
+
+      & p {
+        margin-top: 22px;
+        @include fonts(400, 16px, 26px, #643C5A);
+        mix-blend-mode: normal;
+        opacity: 0.5;
+      }
+
+      & a {
+        margin-top: -9px;
+        font-family: ArchivoBlack, sans-serif;
+        @include fonts(400, 12px, 26px, #D2132A);
+        letter-spacing: 0.428571px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+
+    & .content_right {
+      margin-right: 14.4%;
+      width: 48%;
+      position: relative;
+
+      @include display-flex(center, flex-start);
+      gap: 30px;
+
+      .center {
+        margin-top: 60px;
+      }
+
+      & .columns {
+        width: calc((100% - 60px) / 3);
+        @include display-flex(flex-start);
+        flex-direction: column;
+        gap: 47px;
+        position: relative;
+
+        & .wrapper {
+          position: absolute;
+          width: 100%;
+          background: #cc031c;
+          z-index: 2;
+          display: none;
+          transition: all .5s ease-in-out;
+          border-radius: 5px;
+          padding: 33px 24px;
+
+          & h3{
+            font-family: 'ArchivoBlack', sans-serif;
+            @include fonts(700, 12px, 17px, #FFFFFF);
+            letter-spacing: 0.428571px;
+            text-transform: uppercase;
+            text-align: center;
+          }
+
+          & div{
+            margin-top: 35px;
+            font-family: 'ArchivoBlack', sans-serif;
+            @include fonts(700, 20px, 17px, #FFFFFF);
+            letter-spacing: 0.714286px;
+            text-transform: uppercase;
+            text-align: center;
+          }
+
+          & a{
+            margin-top: 55px;
+            @include display-flex;
+            gap: 4px;
+            @include fonts(400, 12px, 13px, #FFFFFF);
+            text-decoration: none;
+
+            & img{
+              width: 12px;
+            }
+          }
+
+          & .gear{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 43px;
+            mix-blend-mode: normal;
+            opacity: 0.3;
+            filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
+          }
+        }
+
+
+        & .card1 {
+          width: 100%;
+          position: relative;
+          cursor: pointer;
+
+          &:hover .wrapper {
+            display: block;
+          }
+
+          & .pic {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+          }
+
+          & span {
+            position: relative;
+            z-index: 1;
+            @include fonts(400, 16px, 17px, #383030);
+          }
+
+          & .xl {
+            height: 260px;
+          }
+
+          & .l {
+            height: 243px;
+          }
+
+          & .m {
+            height: 197px;
+            object-position: 20% 50%;
+          }
+        }
+
+        & .card2 {
+          width: 100%;
+          height: 272px;
+          cursor: pointer;
+
+          .dark {
+            background: #000000;
+          }
+          .pink {
+            background: #DA89C6;
+          }
+
+          & .container {
+            width: 100%;
+            height: 243px;
+            border-radius: 5px;
+            @include display-flex;
+            margin-bottom: 12px;
+            position: relative;
+
+            &:hover .wrapper {
+              display: block;
+            }
+
+            & .full{
+              height: 100%;
+            }
+
+            & .inner_img {
+              max-width: 147px;
+              height: 139px;
+            }
+          }
+
+          & span {
+            @include fonts(400, 16px, 17px, #383030);
+          }
+        }
+      }
+
+      & .yellow_boll {
+        position: absolute;
+        width: 137px;
+        left: -76px;
+        bottom: 76px;
+        filter: drop-shadow(-24px 27px 17px rgba(128, 120, 110, 0.142401));
+        z-index: 10;
+      }
+
+      & .bagel {
+        position: absolute;
+        width: 244px;
+        left: -128px;
+        top: -53px;
+        filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
+        z-index: 10;
+      }
+
+      & .youtube2{
+        position: absolute;
+        width: 148px;
+        right: -95px;
+        top: 319px;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        z-index: 10;
+      }
+
+    }
+  }
+}

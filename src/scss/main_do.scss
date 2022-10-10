@@ -1,0 +1,364 @@
+@import "_colors";
+@import "_mixins";
+
+.do {
+  background: #170119;
+  padding: 25px 3.8% 68px 3.8%;
+  overflow: hidden;
+  z-index: 11;
+
+  & .content {
+    width: 100%;
+    height: 100%;
+    @include display-flex;
+    //@include display-flex(center, flex-start);
+
+    & .do_left {
+      width: 40.5%;
+
+      & h2 {
+        font-family: 'ArchivoBlack', sans-serif;
+        @include fonts(700, 40px, 40px, #FFFFFF);
+      }
+
+      & .item_block {
+        margin-top: 48px;
+        @include display-flex;
+        flex-wrap: wrap;
+        column-gap: 9px;
+        row-gap: 7px;
+
+        & .item {
+          width: calc((100% - 18px) / 3);
+          height: 174px;
+          border-radius: 12px;
+          overflow: hidden;
+          @include display-flex;
+          background: rgba(100, 60, 90, 0.2);
+          transition: all .5s 1s ease;
+          position: relative;
+
+          & .img_block {
+            height: 100%;
+            width: 100%;
+            mix-blend-mode: normal;
+            filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: inherit;
+            position: relative;
+            z-index: 2;
+            @include display-flex;
+          }
+
+          //&:hover{
+          //  background: #B10217;
+          //
+          //  &  .img_block{
+          //    opacity: 0.8;
+          //    filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
+          //  }
+          //}
+
+
+          //&:hover:after{
+          //  content: "";
+          //  position: absolute;
+          //  width: 100%;
+          //  height: 100%;
+          //  z-index: 1;
+          //  background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
+          //}
+        }
+
+        & .item_hover {
+          background: #B10217;
+
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
+          }
+
+
+          & .img_block {
+            opacity: 0.8;
+            filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
+            transition: none 1s 2s ease;
+          }
+        }
+
+        & .gear_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/gear.png");
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/gear_violet.png");
+          }
+        }
+
+        & .gear_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/gear.png");
+          }
+        }
+
+        & .star2_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/star2.png");
+
+
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/star2_violet.png");
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        & .star2_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/star2.png");
+          }
+        }
+
+        & .graphic_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/graphic.png");
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/graphic_violet.png");
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        & .graphic_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/graphic.png");
+          }
+        }
+
+        & .scale_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/scale.png");
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/scale_violet.png");
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        & .scale_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/scale.png");
+          }
+        }
+
+        & .video_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/video.png");
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/video_violet.png");
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        & .video_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/video.png");
+          }
+        }
+
+        & .headphone2_item {
+          &:hover {
+            & .img_block {
+              background-image: url("../assets/img/headphone2.png");
+            }
+          }
+
+          & .img_block {
+            background-image: url("../assets/img/headphone2_violet.png");
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        & .headphone2_item_hover {
+          & .img_block {
+            background-image: url("../assets/img/headphone2.png");
+          }
+        }
+
+      }
+    }
+
+    & .do_right {
+      width: 59.5%;
+      height: 100%;
+      @include display-flex;
+      position: relative;
+
+      & .do_boll1 {
+        position: absolute;
+        top: 23%;
+        left: 17%;
+        width: 1.53%;
+        object-fit: cover;
+        z-index: 4;
+        mix-blend-mode: normal;
+        opacity: 0.48;
+        filter: blur(6.7957px);
+      }
+
+      & .do_boll2{
+        position: absolute;
+        top: 32%;
+        right: 14%;
+        width: 1.53%;
+        object-fit: cover;
+        z-index: 4;
+        filter: blur(13.5914px);
+      }
+
+      & .do_hard{
+        position: absolute;
+        top: 32%;
+        right: 14%;
+        width: 1.53%;
+        object-fit: cover;
+        z-index: 4;
+        filter: blur(13.5914px);
+      }
+
+      & .do_block {
+        width: 55%;
+        height: 55%;
+        position: relative;
+        @include display-flex;
+
+        & .do_content {
+          z-index: 2;
+          @include display-flex;
+          flex-direction: column;
+
+          //opacity: 0;
+
+
+          & span {
+            @include fonts(700, 36px, 46px, #FFFFFF);
+            //transition: all 2s 1s  ease;
+            text-align: center;
+            animation-name: text;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+          }
+
+          & a {
+            font-family: 'ArchivoBlack', sans-serif;
+            @include fonts(700, 12px, 26px, #D2132A);
+            letter-spacing: 0.428571px;
+            text-transform: uppercase;
+            text-decoration: none;
+            z-index: 2;
+            cursor: pointer;
+            margin-top: 8px;
+            animation-name: text;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+          }
+
+          @keyframes text {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+        }
+
+        & .do_target {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          background-image: url("../assets/img/gear_hover.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: background 2s ease;
+        }
+
+        & .do_gear_item {
+          background-image: url("../assets/img/gear_hover.png");
+          filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+
+        & .do_star2_item {
+          background-image: url("../assets/img/star2_hover.png");
+          filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+
+        & .do_graphic_item {
+          background-image: url("../assets/img/graphic_hover.png");
+          filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+          transform: matrix(-0.94, -0.34, -0.34, 0.94, 0, 0);
+        }
+
+        & .do_scale_item {
+          background-image: url("../assets/img/scale_hover.png");
+          filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+
+        & .do_video_item {
+          background-image: url("../assets/img/video_hover.png");
+        }
+
+        & .do_headphone2_item {
+          background-image: url("../assets/img/headphone2_hover.png");
+          filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+          transform: matrix(-0.96, 0.29, 0.29, 0.96, 0, 0);
+          @include display-flex;
+          width: 80%;
+          height: 80%;
+        }
+      }
+
+
+    }
+
+
+  }
+
+}
