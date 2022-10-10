@@ -75,7 +75,7 @@ export const wipes = () => {
     }
 }
 
-export const onSelectItemDo = (classes, innerTexts ) => {
+export const onSelectItemDo = (classes, innerTexts, subject) => {
 
     const allItem = document.querySelectorAll(".item");
     const doTarget = document.querySelector(".do_target")
@@ -93,7 +93,7 @@ export const onSelectItemDo = (classes, innerTexts ) => {
         allItem[i].classList.add(classes[i]);
 
         allItem[i].addEventListener("mouseover", ()=>{
-            if(allItem[i] !==allItem[activeIndex]){
+            if(i !== activeIndex){
                 allItem[activeIndex].classList.remove(`${classes[activeIndex]}_hover`);
                 allItem[activeIndex].classList.remove("item_hover");
                 doTarget.classList.remove(`do_${classes[activeIndex]}`);
@@ -101,6 +101,16 @@ export const onSelectItemDo = (classes, innerTexts ) => {
                 allItem[i].classList.add("item_hover");
                 doTarget.classList.add(`do_${classes[i]}`);
                 doContent.innerHTML = `<span>${innerTexts[i]}</span><a>learn more</a>`;
+
+                subject.forEach(el=>{
+                    document.querySelector(el).classList.add(`${el.substring(1)}_animation`);
+                })
+
+                setTimeout(()=>{
+                    subject.forEach(el=>{
+                        document.querySelector(el).classList.remove(`${el.substring(1)}_animation`);
+                    })
+                },3000)
 
                 activeIndex = i;
             }

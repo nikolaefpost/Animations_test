@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         "Business Development",
         " Lyric Videos & Animation",
         "Brand Campaigns"
-
     ]
+
+    const subject = [".do_boll1", ".do_boll2", ".do_heart"]
    //  const preloader = document.getElementById("preloader");
    //  const counter = document.getElementById("counter");
    //  const figure = document.getElementById("figure");
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     onChangeCursor(".contact", "hover_contact");
     onChangeCursor(".menu", "hover_menu");
     onChangeCursor(".floaat", "hover_floaat");
-    onSelectItemDo(classes, innerTexts);
+    onSelectItemDo(classes, innerTexts, subject);
     wipes();
 
 

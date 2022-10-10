@@ -52,24 +52,6 @@
             @include display-flex;
           }
 
-          //&:hover{
-          //  background: #B10217;
-          //
-          //  &  .img_block{
-          //    opacity: 0.8;
-          //    filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
-          //  }
-          //}
-
-
-          //&:hover:after{
-          //  content: "";
-          //  position: absolute;
-          //  width: 100%;
-          //  height: 100%;
-          //  z-index: 1;
-          //  background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
-          //}
         }
 
         & .item_hover {
@@ -226,7 +208,7 @@
         position: absolute;
         top: 23%;
         left: 17%;
-        width: 1.53%;
+        width: 2.7%;
         object-fit: cover;
         z-index: 4;
         mix-blend-mode: normal;
@@ -234,24 +216,108 @@
         filter: blur(6.7957px);
       }
 
+      & .do_boll1_animation{
+        animation-duration: 3s;
+        animation-name: boll1;
+      }
+
+      @keyframes boll1 {
+        0% {
+          top: 23%;
+          left: 17%;
+        }
+        30% {
+          top: 40%;
+          left: 13%;
+        }
+        58%,
+        62% {
+          top: 42%;
+          left: 25%;
+        }
+        100% {
+          top: 23%;
+          left: 18%;
+
+        }
+      }
+
       & .do_boll2{
         position: absolute;
         top: 32%;
         right: 14%;
-        width: 1.53%;
+        width: 1.8%;
         object-fit: cover;
         z-index: 4;
         filter: blur(13.5914px);
       }
 
-      & .do_hard{
+      & .do_boll2_animation{
+        animation-duration: 3s;
+        animation-name: boll2;
+      }
+
+      @keyframes boll2 {
+        0% {
+          top: 32%;
+          right: 14%;
+        }
+        30% {
+          top: 45%;
+          right: 9%;
+        }
+        58%,
+        62% {
+          top: 45%;
+          right: 23%;
+        }
+        100% {
+          top: 32%;
+          right: 14%;
+
+        }
+      }
+
+      & .do_heart{
         position: absolute;
-        top: 32%;
-        right: 14%;
-        width: 1.53%;
+        bottom: 28%;
+        left: 19%;
+        width: 7%;
         object-fit: cover;
         z-index: 4;
-        filter: blur(13.5914px);
+        mix-blend-mode: normal;
+        opacity: 0.74;
+        filter: blur(8.15485px);
+        transform: rotate(-25deg);
+      }
+
+      & .do_heart_animation{
+        animation-duration: 3s;
+        animation-name: heart1;
+      }
+
+      @keyframes heart1 {
+        0% {
+          bottom: 28%;
+          left: 19%;
+        }
+        30% {
+          bottom: 18%;
+          left: 29%;
+        }
+        58%,
+        62% {
+          bottom: 28%;
+          left: 35%;
+        }
+        100% {
+          bottom: 27%;
+          left: 19%;
+        }
+      }
+
+      & .do_animation{
+
       }
 
       & .do_block {
