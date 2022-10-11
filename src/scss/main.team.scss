@@ -3,33 +3,230 @@
 
 .team{
   background: #ffecee;
-  padding: 25px 3.8% 68px 3.8%;
+  padding: 25px 55px 191px 55px;
   position: relative;
+  z-index: 12;
+
+  & h2{
+    margin-top: -8px;
+    text-align: center;
+    font-family: 'ArchivoBlack', sans-serif;
+    @include fonts(700, 40px, 40px, #383030);
+    text-transform: uppercase;
+  }
+
+  & .slider_block{
+    margin-top: 4%;
+    height: calc(91% - 86px);
+    @include display-flex(center, flex-start);
+    position: relative;
+
+
+
+    & .prev_block{
+      width: 113px;
+      padding-right: 3px;
+      height: 74%;
+      @include display-flex(flex-start);
+    }
+
+    & .next_block{
+      width: 113px;
+      padding-left: 3px;
+      text-align: right;
+      @include display-flex(flex-end);
+      height: 74%;
+    }
+
+    & .prev, .next{
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      @include display-flex;
+      @include fonts(700, 12px, 13px, #161415);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .border_slide{
+      background: #D2132A;
+      color: white;
+    }
+
+    & .slider{
+      width: calc(100% - 226px);
+      height: 74%;
+
+      position: relative;
+      overflow: hidden;
+
+      & .shift_block{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include display-flex;
+        gap: 17px;
+        transition: left 1s ease-in-out;
+      }
+
+      & .team_card{
+        height: 100%;
+        width: 263px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+
+        &:hover .hover_block{
+          opacity: .9;
+        }
+
+        & img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hover_block{
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: linear-gradient(313.37deg, rgba(177, 2, 23, 0.9) 10.23%, rgba(221, 4, 31, 0.9) 69.59%);
+          z-index: 2;
+          @include display-flex;
+          flex-direction: column;
+
+          & h3{
+            font-family: 'ArchivoBlack', sans-serif;
+            @include fonts(700, 12px, 17px, #FFFFFF);
+            letter-spacing: 0.428571px;
+            text-transform: uppercase;
+          }
+
+          & h4{
+            margin-top: 10px;
+            @include fonts(400, 12px, 13px, #FFFFFF);
+          }
+        }
+      }
+    }
+
+    & .note2{
+      position: absolute;
+      width: 15.7vw;
+      top: -15%;
+      right: 18%;
+      filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+      transform: rotate(-15deg);
+      z-index: 3;
+    }
+
+    & .note2{
+      position: absolute;
+      width: 15.7vw;
+      top: -15%;
+      right: 18%;
+      filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+      transform: rotate(-15deg);
+      z-index: 3;
+    }
+
+    & .red_boll{
+      position: absolute;
+      width: 11.2vw;
+      bottom: 15%;
+      left: 38px;
+      filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+      z-index: 3;
+    }
+
+    & .bagel{
+      position: absolute;
+      width: 17vw;
+      bottom: -96px;
+      right: -15px;
+      filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
+      z-index: 3;
+    }
+  }
 
   & footer{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 24%;
-    background: #170119;
 
-    & a{
-      display: block;
-      text-decoration: none;
+    & .contact{
+      height: 150px;
       @include display-flex;
-      gap: 12px;
-      @include fonts(700, 32px, 46px, #FFFFFF);
-      height: 78.5%;
-      cursor: pointer;
+      background: #170119;
+      position: relative;
 
-      & img{
-        width: 28px;
+      &:hover{
+        & .red_block{
+          right: 0;
+          width: 100%;
+        }
+
+        & a{
+          & img{
+            transform: rotate(45deg);
+          }
+        }
+
+      }
+
+      & .red_block{
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        transition: all .5s ease-in-out;
+        background-image: linear-gradient(313.37deg, #B10217 10.23%, #DD041F 69.59%);
+        //background-position: 50% 0%;
+        z-index: 1;
+      }
+
+      & a{
+        text-decoration: none;
+        @include display-flex;
+        gap: 12px;
+        @include fonts(700, 32px, 46px, #FFFFFF);
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+
+        & img{
+          width: 28px;
+          transition: all .5s ease-in-out;
+        }
       }
     }
 
+    .made{
+      padding: 9px 55px 6px;
+      @include display-flex(space-between);
+      background: #170119;
 
+      & .made_right{
+        @include fonts(400, 14px, 26px, #FFFFFF);
+        mix-blend-mode: normal;
+        opacity: 0.98;
+      }
+
+      & .made_left{
+        @include display-flex;
+        gap: 14px;
+        @include fonts(700, 12px, 26px, #FFFFFF);
+        text-transform: uppercase;
+      }
+    }
   }
-
-
 }

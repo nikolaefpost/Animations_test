@@ -1,4 +1,37 @@
-import ScrollMagic from 'scrollmagic';
+// import ScrollMagic from 'scrollmagic';
+
+export const preloaderAction = () => {
+    const preloader = document.getElementById("preloader");
+    const counter = document.getElementById("counter");
+    const figure = document.getElementById("figure");
+    let time = 0;
+    const figureClasses = ["headphone", "camera", "star"]
+
+
+    const timerId = setInterval(()=>{
+        if (time >= 99) {
+            clearInterval(timerId)
+
+        }
+        time +=  1;
+        counter.textContent = `${time}`;
+    },30)
+
+    let count = 0;
+    const changeImg = setInterval(()=>{
+
+        if (count === 3) count = 0;
+        let cName = figure.className;
+        figure.classList.remove(cName);
+        figure.classList.add(figureClasses[count])
+        count++;
+    }, 500)
+
+    setTimeout(()=>{
+        clearInterval(changeImg);
+        preloader.classList.add('hidden_preload');
+    }, 5000)
+}
 
 export const cssParallax = (cont, el, radiusVal) => {
         document.querySelector(cont).addEventListener("mousemove",(event) => {
@@ -78,8 +111,8 @@ export const wipes = () => {
 export const onSelectItemDo = (classes, innerTexts, subject) => {
 
     const allItem = document.querySelectorAll(".item");
-    const doTarget = document.querySelector(".do_target")
-    const doContent = document.querySelector(".do_content")
+    const doTarget = document.querySelector(".do_target");
+    const doContent = document.querySelector(".do_content");
 
     let activeIndex = 0;
 
@@ -90,25 +123,25 @@ export const onSelectItemDo = (classes, innerTexts, subject) => {
 
 
     for (let i=0; i<=allItem.length; i++){
-        allItem[i].classList.add(classes[i]);
+        allItem[i]?.classList.add(classes[i]);
 
-        allItem[i].addEventListener("mouseover", ()=>{
+        allItem[i]?.addEventListener("mouseover", ()=>{
             if(i !== activeIndex){
-                allItem[activeIndex].classList.remove(`${classes[activeIndex]}_hover`);
-                allItem[activeIndex].classList.remove("item_hover");
-                doTarget.classList.remove(`do_${classes[activeIndex]}`);
-                allItem[i].classList.add(`${classes[i]}_hover`);
-                allItem[i].classList.add("item_hover");
-                doTarget.classList.add(`do_${classes[i]}`);
+                allItem[activeIndex]?.classList.remove(`${classes[activeIndex]}_hover`);
+                allItem[activeIndex]?.classList.remove("item_hover");
+                doTarget?.classList.remove(`do_${classes[activeIndex]}`);
+                allItem[i]?.classList.add(`${classes[i]}_hover`);
+                allItem[i]?.classList.add("item_hover");
+                doTarget?.classList.add(`do_${classes[i]}`);
                 doContent.innerHTML = `<span>${innerTexts[i]}</span><a>learn more</a>`;
 
                 subject.forEach(el=>{
-                    document.querySelector(el).classList.add(`${el.substring(1)}_animation`);
+                    document.querySelector(el)?.classList.add(`${el.substring(1)}_animation`);
                 })
 
                 setTimeout(()=>{
                     subject.forEach(el=>{
-                        document.querySelector(el).classList.remove(`${el.substring(1)}_animation`);
+                        document.querySelector(el)?.classList.remove(`${el.substring(1)}_animation`);
                     })
                 },3000)
 
@@ -116,4 +149,56 @@ export const onSelectItemDo = (classes, innerTexts, subject) => {
             }
         })
     }
+}
+
+export const sliderMove = (prev, next, slider,teamMemberPath) => {
+
+    let amountSlides;
+    if(window.innerWidth > 1200) {
+        amountSlides = 4;
+    }else if(window.innerWidth > 600){
+        amountSlides = 2;
+    }else {
+        amountSlides = 1;
+    }
+
+
+        const RrevEl = document.querySelector(prev);
+    const NextEl = document.querySelector(next);
+    const sliderEl = document.querySelector(slider);
+
+    const widthWindows = window.innerWidth - 336;
+    const cardWidth = (widthWindows - 17*(amountSlides-1))/amountSlides;
+    const baseShift = cardWidth + 17
+
+    const allSlidesWidth = teamMemberPath.length*baseShift-17;
+
+    let shiftWidth = 0;
+
+    sliderEl.innerHTML = teamMemberPath.reduce((accum, current)=>{
+        accum += `<div style="width: ${cardWidth}px" class="team_card"><img alt="team member" src="${current.image}"/><div class="hover_block"><h3>${current.name}</h3><h4>${current.position}</h4></div></div>`
+        return  accum
+    }, "");
+
+
+    NextEl.addEventListener("click", () => {
+        console.log(shiftWidth < allSlidesWidth - widthWindows)
+
+        if(shiftWidth < allSlidesWidth - widthWindows){
+            RrevEl.classList.remove("border_slide");
+            shiftWidth += baseShift;
+            sliderEl.style.left = `${-shiftWidth}px`
+        }
+        if (shiftWidth >= allSlidesWidth - widthWindows) NextEl.classList.add("border_slide");
+    })
+
+    RrevEl.addEventListener("click", () => {
+
+        if(shiftWidth > 0){
+            NextEl.classList.remove("border_slide");
+            shiftWidth -= baseShift;
+            sliderEl.style.left = `${-shiftWidth}px`
+        }
+        if (shiftWidth === 0) RrevEl.classList.add("border_slide");
+    })
 }

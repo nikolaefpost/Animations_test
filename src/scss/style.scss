@@ -82,17 +82,19 @@ header{
       }
     }
   }
-}
 
-#white{
-  & span{
-    color: #161415;
+  & .white{
+    & span{
+      color: #161415;
     }
 
-  & .menu{
-    background: white;
+    & .menu{
+      background: white;
+    }
   }
 }
+
+
 
 
 

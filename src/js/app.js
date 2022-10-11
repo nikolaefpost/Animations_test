@@ -1,4 +1,4 @@
-import {cssParallax, viewersCount, customCursor, onChangeCursor, wipes, onSelectItemDo} from "./modules/functions.js";
+import {cssParallax, viewersCount, customCursor, onChangeCursor, wipes, onSelectItemDo, sliderMove, preloaderAction} from "./modules/functions.js";
 
 
 
@@ -13,39 +13,20 @@ document.addEventListener("DOMContentLoaded", function() {
         " Lyric Videos & Animation",
         "Brand Campaigns"
     ]
+    const subject = [".do_boll1", ".do_boll2", ".do_heart"];
+    const teamMemberPath = [
+        {image: "./assets/img/sliderPhoto1.png", name: "Thomas French", position: "Video Maker"},
+        {image: "./assets/img/sliderPhoto2.png", name: "Thomas French", position: "Video Maker"},
+        {image: "./assets/img/sliderPhoto3.png", name: "Thomas French", position: "Video Maker"},
+        {image: "./assets/img/sliderPhoto4.png", name: "Thomas French", position: "Video Maker"},
+        {image: "./assets/img/sliderPhoto1.png", name: "Thomas French", position: "Video Maker"},
+        {image: "./assets/img/sliderPhoto2.png", name: "Thomas French", position: "Video Maker"},
+    ]
 
-    const subject = [".do_boll1", ".do_boll2", ".do_heart"]
-   //  const preloader = document.getElementById("preloader");
-   //  const counter = document.getElementById("counter");
-   //  const figure = document.getElementById("figure");
-   //  let time = 0;
-   //  const figureClasses = ["headphone", "camera", "star"]
-   //
-   //
-   // const timerId = setInterval(()=>{
-   //      if (time >= 99) {
-   //          clearInterval(timerId)
-   //
-   //      }
-   //     time +=  1;
-   //      counter.textContent = `${time}`;
-   //  },30)
-   //
-   //  let count = 0;
-   //  const changeImg = setInterval(()=>{
-   //
-   //      if (count === 3) count = 0;
-   //      let cName = figure.className;
-   //      figure.classList.remove(cName);
-   //      figure.classList.add(figureClasses[count])
-   //      count++;
-   //  }, 500)
-   //
-   //  setTimeout(()=>{
-   //      clearInterval(changeImg);
-   //      preloader.classList.add('hidden_preload');
-   //  }, 5000)
 
+
+    preloaderAction();
+    wipes();
     cssParallax('.main_parallax', '.parallax_base', 20);
     viewersCount("viewers");
     customCursor('.main_parallax');
@@ -53,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
     onChangeCursor(".menu", "hover_menu");
     onChangeCursor(".floaat", "hover_floaat");
     onSelectItemDo(classes, innerTexts, subject);
-    wipes();
+    sliderMove(".prev", ".next", ".shift_block", teamMemberPath);
+
 
 
 
