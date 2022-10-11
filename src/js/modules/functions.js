@@ -1,4 +1,4 @@
-// import ScrollMagic from 'scrollmagic';
+import ScrollMagic from 'scrollmagic';
 
 export const preloaderAction = () => {
     const preloader = document.getElementById("preloader");
@@ -14,27 +14,27 @@ export const preloaderAction = () => {
 
         }
         time +=  1;
-        counter.textContent = `${time}`;
+        if (counter) counter.textContent = `${time}`;
     },30)
 
     let count = 0;
     const changeImg = setInterval(()=>{
 
         if (count === 3) count = 0;
-        let cName = figure.className;
-        figure.classList.remove(cName);
-        figure.classList.add(figureClasses[count])
+        let cName = figure?.className;
+        figure?.classList.remove(cName);
+        figure?.classList.add(figureClasses[count])
         count++;
     }, 500)
 
     setTimeout(()=>{
         clearInterval(changeImg);
-        preloader.classList.add('hidden_preload');
+        preloader?.classList.add('hidden_preload');
     }, 5000)
 }
 
 export const cssParallax = (cont, el, radiusVal) => {
-        document.querySelector(cont).addEventListener("mousemove",(event) => {
+        document.querySelector(cont)?.addEventListener("mousemove",(event) => {
 
         let cx = Math.ceil(document.documentElement.clientWidth / 2);
         let cy = Math.ceil(document.documentElement.clientHeight / 2);
@@ -57,14 +57,14 @@ export const viewersCount = (el) =>{
        let value = 1000030020;
         setInterval(()=>{
                 value += 1;
-                element.textContent = value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+                if (element) element.textContent = value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
         }, 10)
 }
 
 export const customCursor = (cont) => {
     const cursor = document.querySelector(".cursor");
 
-    document.querySelector(cont).addEventListener("mousemove",(event) => {
+    document.querySelector(cont)?.addEventListener("mousemove",(event) => {
         let x = event.clientX;
         let y = event.clientY;
         cursor.style.left = x + "px";
@@ -73,12 +73,12 @@ export const customCursor = (cont) => {
 }
 
 export const onChangeCursor = (el, classTarget) => {
-    document.querySelector(el).addEventListener("mouseover", ()=>{
+    document.querySelector(el)?.addEventListener("mouseover", ()=>{
         const cursor = document.querySelector(".cursor");
         cursor.classList.add(classTarget);
     })
 
-    document.querySelector(el).addEventListener("mouseout", ()=>{
+    document.querySelector(el)?.addEventListener("mouseout", ()=>{
         const cursor = document.querySelector(".cursor");
         cursor.classList.remove(classTarget);
     })
@@ -116,10 +116,10 @@ export const onSelectItemDo = (classes, innerTexts, subject) => {
 
     let activeIndex = 0;
 
-    allItem[activeIndex].classList.add(`${classes[activeIndex]}_hover`);
-    allItem[activeIndex].classList.add("item_hover");
-    doTarget.classList.add(`do_${classes[activeIndex]}`);
-    doContent.innerHTML = `<span>${innerTexts[activeIndex]}</span><a>learn more</a>`;
+    allItem[activeIndex]?.classList.add(`${classes[activeIndex]}_hover`);
+    allItem[activeIndex]?.classList.add("item_hover");
+    doTarget?.classList.add(`do_${classes[activeIndex]}`);
+    if (doContent) doContent.innerHTML = `<span>${innerTexts[activeIndex]}</span><a>learn more</a>`;
 
 
     for (let i=0; i<=allItem.length; i++){
@@ -175,13 +175,13 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
 
     let shiftWidth = 0;
 
-    sliderEl.innerHTML = teamMemberPath.reduce((accum, current)=>{
+    if (sliderEl) sliderEl.innerHTML = teamMemberPath.reduce((accum, current)=>{
         accum += `<div style="width: ${cardWidth}px" class="team_card"><img alt="team member" src="${current.image}"/><div class="hover_block"><h3>${current.name}</h3><h4>${current.position}</h4></div></div>`
         return  accum
     }, "");
 
 
-    NextEl.addEventListener("click", () => {
+    NextEl?.addEventListener("click", () => {
         console.log(shiftWidth < allSlidesWidth - widthWindows)
 
         if(shiftWidth < allSlidesWidth - widthWindows){
@@ -192,7 +192,7 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
         if (shiftWidth >= allSlidesWidth - widthWindows) NextEl.classList.add("border_slide");
     })
 
-    RrevEl.addEventListener("click", () => {
+    RrevEl?.addEventListener("click", () => {
 
         if(shiftWidth > 0){
             NextEl.classList.remove("border_slide");

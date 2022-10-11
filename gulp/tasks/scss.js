@@ -9,7 +9,7 @@ import cleanCss from "gulp-clean-css"
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-    return app.gulp.src(app.path.src.scss, {sourcemaps: true})
+    return app.gulp.src(app.path.src.scss, {sourcemaps: app.isDev})
         .pipe(sass({
             outputStyle: "expanded"
         }))
