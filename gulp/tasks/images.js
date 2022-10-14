@@ -3,10 +3,10 @@ import imagemin from "gulp-imagemin";
 
 export const images = () => {
     return app.gulp.src(app.path.src.pic)
-        .pipe(app.plugins.newer(app.path.build.pic))
-        .pipe(webp())
-        .pipe(app.gulp.dest(app.path.build.pic))
-        .pipe(app.gulp.src(app.path.src.pic))
+        // .pipe(app.plugins.newer(app.path.build.pic))
+        // .pipe(webp())
+        // .pipe(app.gulp.dest(app.path.build.pic))
+        // .pipe(app.gulp.src(app.path.src.pic))
         .pipe(app.plugins.newer(app.path.build.pic))
         .pipe(imagemin({
             progressive: true,

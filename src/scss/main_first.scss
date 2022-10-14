@@ -37,8 +37,8 @@ section.main_parallax{
     & .parallax_base {
       transform-style: preserve-3d;
       -webkit-transform-style: preserve-3d;
-      width: 992px;
-      height: 400px;
+      width: auto;
+      height: auto;
       text-align: center;
       margin: 100px;
       transition: all 2s cubic-bezier(0.1, 0.7, 1, 0.1);
@@ -438,7 +438,277 @@ section.main_parallax{
     background: #FFEFF6;
   }
 
+  @media screen and (max-width: 1200px){
 
+    & .main_title {
+      & .parallax_base {
+        margin: 60px;
+
+        & h1 {
+          @include fonts(600, 100px, 120px, #FFEFF6);
+        }
+
+        & img {
+          margin-top: -64px;
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px){
+
+    & .main_title {
+      //align-items: flex-start;
+
+      & .parallax_base {
+        margin: 40px 40px 100px;
+
+        & h1 {
+          @include fonts(600, 50px, 60px, #FFEFF6);
+        }
+
+        & img {
+          margin-top: -20px;
+          width: 200px;
+        }
+      }
+    }
+
+    & .main_statistics {
+      position: absolute;
+      bottom: 4%;
+      margin-left: -69px;
+      gap: 6px;
+
+      & .label {
+        @include fonts(400, 12px, 13px, #643C5A);
+      }
+
+      & .value {
+        @include fonts(700, 20px, 24px, #F6F6F6);
+      }
+
+      & .viewers {
+        @include fonts(500, 12px, 13px, #F6F6F6);
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    padding: 16px;
+
+    & .main_title {
+      //align-items: flex-start;
+
+      & .parallax_base {
+        margin: 40px 40px 100px;
+
+        & h1 {
+          @include fonts(600, 36px, 60px, #FFEFF6);
+        }
+
+        & img {
+          margin-top: -30px;
+          width: 200px;
+        }
+      }
+    }
+
+    & .main_headphone {
+      top: 30%;
+      width: 15%;
+    }
+
+    @keyframes headphone {
+      0% {
+        top: 30%;
+        left: 17%;
+      }
+      30% {
+        top: 20%;
+        left: 19%;
+      }
+      68%,
+      72% {
+        top: 15%;
+        left: 24%;
+      }
+      100% {
+        top: 30%;
+        left: 17%;
+      }
+    }
+
+    & .main_camera {
+      position: absolute;
+      bottom: 23%;
+      left: 17%;
+      width: 19%;
+      object-fit: cover;
+      z-index: 4;
+      animation-name: camera;
+    }
+
+    @keyframes camera {
+      0% {
+        bottom: 30%;
+        left: 20%;
+      }
+      30%, 40% {
+        bottom: 16%;
+        left: 10%;
+      }
+      68%, 72% {
+        bottom: 18%;
+        left: 12%;
+      }
+      100% {
+        bottom: 30%;
+        left: 20%;
+      }
+    }
+
+    & .main_boll1 {
+      width: 4%;
+    }
+
+    & .main_ring_violet {
+      width: 7%;
+    }
+
+    & .main_youtube {
+      top: 26%;
+      right: 16.3%;
+      width: 22%;
+    }
+
+    @keyframes youtube {
+      0% {
+        top: 26%;
+        right: 16.3%;
+      }
+      30%, 40% {
+        top: 22%;
+        right: 18%;
+      }
+      68%, 72% {
+        top: 23%;
+        right: 18%;
+      }
+      100% {
+        top: 26%;
+        right: 16.3%;
+      }
+    }
+
+    & .main_boll2 {
+      width: 3%;
+    }
+
+    & .main_ring {
+      position: absolute;
+      bottom: 25%;
+      right: 12%;
+      width: 12%;
+      object-fit: cover;
+      z-index: 4;
+      filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
+      transform: rotate(-5deg);
+      animation-name: ring;
+    }
+
+    @keyframes ring {
+      0% {
+        bottom: 25%;
+        right: 12%;
+      }
+      30%, 40% {
+        bottom: 28%;
+        right: 15%;
+      }
+      68%, 72% {
+        bottom: 29%;
+        right: 17%;
+      }
+      100% {
+        bottom: 25%;
+        right: 12%;
+      }
+    }
+
+    & .main_heart_violet {
+      position: absolute;
+      bottom: 17.8%;
+      right: 32.8%;
+      width: 4%;
+      object-fit: cover;
+      z-index: 4;
+      mix-blend-mode: normal;
+      opacity: 0.74;
+      filter: blur(8.15485px);
+      transform: rotate(-25deg);
+      animation-name: heart_violet;
+    }
+
+    @keyframes heart_violet {
+      0% {
+        bottom: 17.8%;
+        right: 32.8%;
+      }
+      30%, 40% {
+        bottom: 19%;
+        right: 29%;
+      }
+      50% {
+        filter: blur(2px);
+        opacity: 1;
+        bottom: 17.8%;
+        right: 27%;
+      }
+      68%, 72% {
+        bottom: 15%;
+        right: 29%;
+        filter: blur(8.15485px);
+        opacity: 0.74;
+      }
+      100% {
+        bottom: 17.8%;
+        right: 32.8%;
+      }
+    }
+
+    & .main_note {
+      position: absolute;
+      bottom: 7.9%;
+      left: 26.9%;
+      width: 4.7%;
+      object-fit: cover;
+      z-index: 4;
+      filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
+      animation-name: note;
+    }
+
+    @keyframes note{
+      0% {
+        bottom: 7.9%;
+        left: 26.9%;
+      }
+      30%, 40% {
+        bottom: 10%;
+        left: 26.9%;
+      }
+      68%, 72% {
+        bottom: 10%;
+        left: 30%;
+      }
+      100% {
+        bottom: 7.9%;
+        left: 26.9%;
+      }
+    }
+
+  }
 
 
 }
