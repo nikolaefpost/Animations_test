@@ -553,19 +553,31 @@ section.main_parallax{
     @keyframes camera {
       0% {
         bottom: 30%;
-        left: 20%;
+        left: 50%;
       }
-      30%, 40% {
-        bottom: 16%;
+      20% {
+        bottom: 40%;
         left: 10%;
       }
-      68%, 72% {
-        bottom: 18%;
-        left: 12%;
+      35% {
+        bottom: 50%;
+        left: 10%;
+      }
+      50% {
+        bottom: 60%;
+        left: 50%;
+      }
+      65% {
+        bottom: 50%;
+        left: 75%;
+      }
+      80% {
+        bottom: 40%;
+        left: 75%;
       }
       100% {
         bottom: 30%;
-        left: 20%;
+        left: 50%;;
       }
     }
 
@@ -607,15 +619,9 @@ section.main_parallax{
     }
 
     & .main_ring {
-      position: absolute;
       bottom: 25%;
       right: 12%;
       width: 12%;
-      object-fit: cover;
-      z-index: 4;
-      filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
-      transform: rotate(-5deg);
-      animation-name: ring;
     }
 
     @keyframes ring {
@@ -638,77 +644,33 @@ section.main_parallax{
     }
 
     & .main_heart_violet {
-      position: absolute;
-      bottom: 17.8%;
-      right: 32.8%;
-      width: 4%;
-      object-fit: cover;
-      z-index: 4;
-      mix-blend-mode: normal;
-      opacity: 0.74;
-      filter: blur(8.15485px);
-      transform: rotate(-25deg);
-      animation-name: heart_violet;
-    }
-
-    @keyframes heart_violet {
-      0% {
-        bottom: 17.8%;
-        right: 32.8%;
-      }
-      30%, 40% {
-        bottom: 19%;
-        right: 29%;
-      }
-      50% {
-        filter: blur(2px);
-        opacity: 1;
-        bottom: 17.8%;
-        right: 27%;
-      }
-      68%, 72% {
-        bottom: 15%;
-        right: 29%;
-        filter: blur(8.15485px);
-        opacity: 0.74;
-      }
-      100% {
-        bottom: 17.8%;
-        right: 32.8%;
-      }
+      width: 8%;
     }
 
     & .main_note {
-      position: absolute;
-      bottom: 7.9%;
-      left: 26.9%;
-      width: 4.7%;
-      object-fit: cover;
-      z-index: 4;
-      filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
-      animation-name: note;
+      bottom: 15%;
+      left: 40%;
+      width: 8%;
     }
 
     @keyframes note{
       0% {
-        bottom: 7.9%;
-        left: 26.9%;
+        bottom: 15%;
+        left: 15%;
       }
       30%, 40% {
-        bottom: 10%;
-        left: 26.9%;
+        bottom: 25%;
+        left: 25%;
       }
       68%, 72% {
-        bottom: 10%;
-        left: 30%;
+        bottom: 26%;
+        left: 35%;
       }
       100% {
-        bottom: 7.9%;
-        left: 26.9%;
+        bottom: 15%;
+        left: 15%;
       }
     }
 
   }
-
-
 }

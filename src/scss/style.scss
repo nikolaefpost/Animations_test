@@ -92,15 +92,39 @@ header{
       background: white;
     }
   }
-}
 
+  @media screen and (max-width: 800px) and (min-width: 400px){
 
+    & .floaat{
+      width: 40px;
+      height: auto;
+    }
 
+    & .right_head{
+      gap: 12px;
 
+      & span{
+        display: none;
+      }
 
+      & .menu{
+        width: 24px;
+        height: 24px;
 
+        & img{
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
 
+  @media screen and (max-width: 800px){
+    & .right_head{
 
-@media screen and (max-width: 500px){
-
+      & span{
+        display: none;
+      }
+    }
+  }
 }

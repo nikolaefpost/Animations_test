@@ -3,7 +3,7 @@
 
 .team{
   background: #ffecee;
-  padding: 25px 55px 191px 55px;
+  padding: 3vh 4vw 22vh 4vw;
   position: relative;
   z-index: 12;
 
@@ -13,6 +13,14 @@
     font-family: 'ArchivoBlack', sans-serif;
     @include fonts(700, 40px, 40px, #383030);
     text-transform: uppercase;
+
+    @media screen and (max-width: 1200px){
+      @include fonts(700, 30px, 30px, #383030);
+    }
+
+    @media screen and (max-width: 400px){
+      @include fonts(700, 20px, 20px, #383030);
+    }
   }
 
   & .slider_block{
@@ -154,6 +162,195 @@
       filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
       z-index: 3;
     }
+
+    @media screen and (max-width: 1200px){
+      height: calc(91% - 84px);
+
+      & .prev_block, .next_block{
+        height: 90%;
+      }
+
+      & .slider{
+        width: calc(100% - 226px);
+        height: 90%;
+
+        & .team_card{
+
+          & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            object-position: center top;
+            z-index: 1;
+          }
+
+          .hover_block{
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(313.37deg, rgba(177, 2, 23, 0.9) 10.23%, rgba(221, 4, 31, 0.9) 69.59%);
+            z-index: 2;
+            @include display-flex;
+            flex-direction: column;
+
+            & h3{
+              font-family: 'ArchivoBlack', sans-serif;
+              @include fonts(700, 12px, 17px, #FFFFFF);
+              letter-spacing: 0.428571px;
+              text-transform: uppercase;
+            }
+
+            & h4{
+              margin-top: 10px;
+              @include fonts(400, 12px, 13px, #FFFFFF);
+            }
+          }
+        }
+      }
+
+      & .note2{
+        position: absolute;
+        width: 15.7vw;
+        top: -15%;
+        right: 18%;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        transform: rotate(-15deg);
+        z-index: 3;
+      }
+
+      & .note2{
+        position: absolute;
+        width: 15.7vw;
+        top: -15%;
+        right: 18%;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        transform: rotate(-15deg);
+        z-index: 3;
+      }
+
+      & .red_boll{
+        position: absolute;
+        width: 11.2vw;
+        bottom: 15%;
+        left: 38px;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        z-index: 3;
+      }
+
+      & .bagel{
+        position: absolute;
+        width: 17vw;
+        bottom: -96px;
+        right: -15px;
+        filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
+        z-index: 3;
+      }
+    }
+
+    @media screen and (max-width: 400px){
+      height: calc(96% - 74px);
+
+      & .prev_block, .next_block{
+        position: absolute;
+        z-index: 10;
+      }
+
+      & .prev_block{
+        left: 0;
+      }
+
+      & .next_block{
+       right: 0;
+      }
+
+
+
+      & .slider{
+        width: 100%;
+        height: 90%;
+
+        & .team_card{
+
+          & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            object-position: center top;
+            z-index: 1;
+          }
+
+          .hover_block{
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(313.37deg, rgba(177, 2, 23, 0.9) 10.23%, rgba(221, 4, 31, 0.9) 69.59%);
+            z-index: 2;
+            @include display-flex;
+            flex-direction: column;
+
+            & h3{
+              font-family: 'ArchivoBlack', sans-serif;
+              @include fonts(700, 12px, 17px, #FFFFFF);
+              letter-spacing: 0.428571px;
+              text-transform: uppercase;
+            }
+
+            & h4{
+              margin-top: 10px;
+              @include fonts(400, 12px, 13px, #FFFFFF);
+            }
+          }
+        }
+      }
+
+      & .note2{
+        position: absolute;
+        width: 15.7vw;
+        top: -15%;
+        right: 18%;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        transform: rotate(-15deg);
+        z-index: 3;
+      }
+
+      & .note2{
+        position: absolute;
+        width: 15.7vw;
+        top: -15%;
+        right: 18%;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        transform: rotate(-15deg);
+        z-index: 3;
+      }
+
+      & .red_boll{
+        position: absolute;
+        width: 11.2vw;
+        bottom: 15%;
+        left: 38px;
+        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
+        z-index: 3;
+      }
+
+      & .bagel{
+        position: absolute;
+        width: 17vw;
+        bottom: -96px;
+        right: -15px;
+        filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
+        z-index: 3;
+      }
+    }
   }
 
   & footer{
@@ -163,7 +360,7 @@
     width: 100%;
 
     & .contact{
-      height: 150px;
+      height: 18.8vh;
       @include display-flex;
       background: #170119;
       position: relative;
@@ -210,7 +407,7 @@
       }
     }
 
-    .made{
+    & .made{
       padding: 9px 55px 6px;
       @include display-flex(space-between);
       background: #170119;
@@ -226,6 +423,42 @@
         gap: 14px;
         @include fonts(700, 12px, 26px, #FFFFFF);
         text-transform: uppercase;
+      }
+    }
+
+    @media screen and (max-width: 800px){
+
+      & .contact{
+        height: 18.8vh;
+
+        & a{
+          gap: 8px;
+          @include fonts(700, 18px, 24px, #FFFFFF);
+
+          & img{
+            width: 18px;
+          }
+        }
+      }
+
+      .made{
+        padding: 9px 55px 6px;
+        @include display-flex(space-between);
+        background: #170119;
+
+        & .made_right{
+          @include fonts(400, 12px, 13px, #FFFFFF);
+
+        }
+
+        & .made_left{
+          gap: 14px;
+          @include fonts(700, 8px, 13px, #FFFFFF);
+
+          & img{
+            width: 12px;
+          }
+        }
       }
     }
   }

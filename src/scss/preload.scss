@@ -63,6 +63,68 @@
     font-family: 'Archivo', sans-serif;
   }
 
+  @media screen and (max-width: 1200px){
+
+    & .block{
+      margin-bottom: 0;
+
+      & #counter{
+        @include fonts(600, 320px, 370px, rgba(100, 60, 90, 0.2));
+      }
+
+      & .headphone{
+        width: 180px;
+        height: 250px;
+        left: calc(50% - 90px);
+      }
+
+      & .camera{
+        width: 210px;
+        height: 250px;
+        left: calc(50% - 105px);
+      }
+
+      & .star{
+        width: 180px;
+        height: 250px;
+        left: calc(50% - 90px);
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px){
+
+    & .block{
+
+      & #counter{
+        @include fonts(600, 140px, 160px, rgba(100, 60, 90, 0.2));
+      }
+
+      & .headphone{
+        width: 80px;
+        height: 110px;
+        left: calc(50% - 40px);
+      }
+
+      & .camera{
+        width: 100px;
+        height: 110px;
+        left: calc(50% - 50px);
+      }
+
+      & .star{
+        width: 100px;
+        height: 110px;
+        left: calc(50% - 50px);
+      }
+
+    }
+
+    & .loading{
+      @include fonts(700, 12px, 13px, $yellow);
+    }
+  }
+
 }
 
 .hidden_preload{
@@ -77,7 +139,6 @@
   }
 
   to {
-    //height: 0!important;
     height: 0;
   }
 }

@@ -6,7 +6,6 @@
   padding: 25px 3.8% 68px 3.8%;
   overflow: hidden;
   z-index: 11;
-  //height: 150vh!important;
 
   & .content {
     width: 100%;
@@ -63,6 +62,7 @@
         flex-direction: column;
         gap: 47px;
         position: relative;
+
 
         & .wrapper {
           position: absolute;
@@ -220,6 +220,301 @@
         z-index: 10;
       }
 
+    }
+  }
+
+  @media screen and (max-width: 1200px){
+    & .content {
+      margin-top: 10px;
+      padding-top: 0;
+      gap: 4%;
+
+      & .content_left {
+        top: 32px;
+      }
+
+      & .content_right {
+        margin-right: 0.4%;
+        width: 66%;
+        gap: 20px;
+
+        .center {
+          margin-top: 60px;
+        }
+
+        & .columns {
+          width: calc((100% - 40px) / 3);
+          gap: 30px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px){
+
+    padding: 8px 3% 40px 3%;
+
+    & .content {
+
+      & .content_left {
+        width: 22%;
+        top: 32px;
+        position: sticky;
+
+        & h2 {
+          @include fonts(700, 18px, 20px, #383030);
+        }
+
+        & p {
+          margin-top: 12px;
+          @include fonts(400, 12px, 14px, #643C5A);
+        }
+
+        & a {
+          @include fonts(400, 8px, 20px, #D2132A);
+        }
+      }
+
+      & .content_right {
+        margin-right: 0;
+        width: 66.4%;
+
+        @include display-flex(center, flex-start);
+        gap: 10px;
+
+        .center {
+          margin-top: 20px;
+        }
+
+        & .columns {
+          width: calc((100% - 20px) / 3);
+          gap: 10px;
+
+          & .wrapper {
+
+            padding: 16px 12px;
+
+            & h3{
+              @include fonts(700, 8px, 12px, #FFFFFF);
+            }
+
+            & div{
+              margin-top: 12px;
+              @include fonts(700, 14px, 14px, #FFFFFF);
+            }
+
+            & a{
+              margin-top: 20px;
+              @include fonts(400, 8px, 12px, #FFFFFF);
+
+              & img{
+                width: 8px;
+              }
+            }
+          }
+
+
+          & .card1 {
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover .wrapper {
+              display: block;
+            }
+
+
+            & span {
+              @include fonts(400, 12px, 13px, #383030);
+            }
+
+            & .xl {
+              height: 140px;
+            }
+
+            & .l {
+              height: 120px;
+            }
+
+            & .m {
+              height: 100px;
+              object-position: 20% 50%;
+            }
+          }
+
+          & .card2 {
+            height: auto;
+
+            & .container {
+              height: 140px;
+
+
+              & .inner_img {
+                max-width: 60px;
+                height: 80px;
+              }
+            }
+
+            & span {
+              @include fonts(400, 12px, 13px, #383030);
+            }
+          }
+        }
+
+        & .yellow_boll {
+          width: 80px;
+          left: -46px;
+          bottom: 36px;
+        }
+
+        & .bagel {
+          width: 120px;
+          left: -60px;
+          top: -15px;
+        }
+
+        & .youtube2{
+          width: 80px;
+          right: -25px;
+          top: 219px;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    padding: 12px 3.8% 40px 3.8%;
+
+    & .content {
+      @include display-flex(flex-start);
+      flex-direction: column;
+      overflow: auto;
+
+      & .content_left {
+        width: 100%;
+        top: 0;
+        position: relative;
+      }
+
+      & .content_right {
+        width: 100%;
+        overflow: scroll;
+        position: static;
+
+        @include display-flex(flex-start);
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 40px;
+
+        .center {
+          margin-top: 0;
+        }
+
+        & .columns {
+          width: 100%;
+          @include display-flex(flex-start);
+          flex-direction: column;
+          gap: 12px;
+          height: auto;
+
+          & .wrapper {
+             padding: 33px 24px;
+
+            & h3{
+              @include fonts(700, 12px, 17px, #FFFFFF);
+
+            }
+
+            & div{
+              margin-top: 35px;
+              @include fonts(700, 20px, 17px, #FFFFFF);
+            }
+
+            & a{
+              margin-top: 55px;
+              @include fonts(400, 12px, 13px, #FFFFFF);
+
+              & img{
+                width: 12px;
+              }
+            }
+
+            & .gear{
+              position: absolute;
+              width: 150px;
+              left: calc(50% - 75px);
+              top: 43px;
+              mix-blend-mode: normal;
+              opacity: 0.3;
+              filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
+            }
+          }
+
+
+          & .card1 {
+            width: 100%;
+
+
+            & span {
+              position: relative;
+              z-index: 1;
+              @include fonts(400, 16px, 17px, #383030);
+            }
+
+            & .xl {
+              height: 260px;
+            }
+
+            & .l {
+              height: 243px;
+            }
+
+            & .m {
+              height: 197px;
+              object-position: 20% 50%;
+            }
+          }
+
+          & .card2 {
+            width: 100%;
+            height: 272px;
+
+
+            & .container {
+              height: 243px;
+
+              & .inner_img {
+                max-width: 147px;
+                height: 139px;
+              }
+            }
+
+            & span {
+              @include fonts(400, 16px, 17px, #383030);
+            }
+          }
+        }
+
+        & .yellow_boll {
+          width: 97px;
+          left: -36px;
+          bottom: 20px;;
+        }
+
+        & .bagel {
+          width: 150px;
+          left: -50px;
+          top: 130px;
+        }
+
+        & .youtube2{
+          width: 128px;
+          right: -35px;
+          top: 319px;
+        }
+      }
     }
   }
 }

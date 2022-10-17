@@ -163,12 +163,21 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
     }
 
 
-        const RrevEl = document.querySelector(prev);
+    const RrevEl = document.querySelector(prev);
     const NextEl = document.querySelector(next);
     const sliderEl = document.querySelector(slider);
 
-    const widthWindows = window.innerWidth - 336;
-    const cardWidth = (widthWindows - 17*(amountSlides-1))/amountSlides;
+    let widthWindows, cardWidth
+
+    if (window.innerWidth>400){
+        widthWindows = window.innerWidth*0.94 - 226;
+        cardWidth = (widthWindows - 17*(amountSlides-1))/amountSlides;
+    }else {
+        widthWindows = window.innerWidth*0.94;
+        cardWidth = widthWindows;
+    }
+
+
     const baseShift = cardWidth + 17
 
     const allSlidesWidth = teamMemberPath.length*baseShift-17;
