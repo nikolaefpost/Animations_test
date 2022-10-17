@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
         {image: "./assets/img/sliderPhoto1.png", name: "Thomas French", position: "Video Maker"},
         {image: "./assets/img/sliderPhoto2.png", name: "Thomas French", position: "Video Maker"},
     ]
-    console.log("Done");
-
 
     preloaderAction();
     wipes();
