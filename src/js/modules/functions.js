@@ -174,7 +174,7 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
         cardWidth = (widthWindows - 17*(amountSlides-1))/amountSlides;
     }else {
         widthWindows = window.innerWidth*0.94;
-        cardWidth = widthWindows;
+        cardWidth = widthWindows*.8;
     }
 
 

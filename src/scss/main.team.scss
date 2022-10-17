@@ -135,16 +135,6 @@
       z-index: 3;
     }
 
-    & .note2{
-      position: absolute;
-      width: 15.7vw;
-      top: -15%;
-      right: 18%;
-      filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
-      transform: rotate(-15deg);
-      z-index: 3;
-    }
-
     & .red_boll{
       position: absolute;
       width: 11.2vw;
@@ -256,98 +246,36 @@
       height: calc(96% - 74px);
 
       & .prev_block, .next_block{
-        position: absolute;
-        z-index: 10;
+        display: none;
       }
 
-      & .prev_block{
-        left: 0;
-      }
-
-      & .next_block{
-       right: 0;
-      }
-
-
-
-      & .slider{
+      & .slider {
         width: 100%;
-        height: 90%;
-
-        & .team_card{
-
-          & img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            object-position: center top;
-            z-index: 1;
-          }
-
-          .hover_block{
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(313.37deg, rgba(177, 2, 23, 0.9) 10.23%, rgba(221, 4, 31, 0.9) 69.59%);
-            z-index: 2;
-            @include display-flex;
-            flex-direction: column;
-
-            & h3{
-              font-family: 'ArchivoBlack', sans-serif;
-              @include fonts(700, 12px, 17px, #FFFFFF);
-              letter-spacing: 0.428571px;
-              text-transform: uppercase;
-            }
-
-            & h4{
-              margin-top: 10px;
-              @include fonts(400, 12px, 13px, #FFFFFF);
-            }
-          }
-        }
+        height: 95%;
+        overflow-x: scroll;
       }
 
       & .note2{
         position: absolute;
-        width: 15.7vw;
-        top: -15%;
+        width: 35vw;
+        top: -5%;
         right: 18%;
-        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
-        transform: rotate(-15deg);
-        z-index: 3;
       }
 
-      & .note2{
-        position: absolute;
-        width: 15.7vw;
-        top: -15%;
-        right: 18%;
-        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
-        transform: rotate(-15deg);
-        z-index: 3;
-      }
 
       & .red_boll{
         position: absolute;
-        width: 11.2vw;
-        bottom: 15%;
-        left: 38px;
-        filter: drop-shadow(-24px 27px 17px rgba(93, 50, 49, 0.0836975));
-        z-index: 3;
+        width: 22vw;
+        bottom: 0;
+        left: -30px;
       }
 
       & .bagel{
         position: absolute;
-        width: 17vw;
-        bottom: -96px;
+        width: 34vw;
+        bottom: -8vh;
         right: -15px;
-        filter: drop-shadow(-24px 27px 17px rgba(181, 103, 7, 0.142401));
+        filter: drop-shadow(-11px 14px 4px rgba(181, 103, 7, 0.142401));
         z-index: 3;
       }
     }
