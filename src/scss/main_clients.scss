@@ -69,8 +69,8 @@
           width: 100%;
           background: #cc031c;
           z-index: 2;
-          display: none;
-          transition: all .5s ease-in-out;
+          opacity: 0;
+          transition: all 1s ease-in-out;
           border-radius: 5px;
           padding: 33px 24px;
 
@@ -105,9 +105,9 @@
 
           & .gear{
             position: absolute;
-            width: 100%;
-            left: 0;
-            top: 43px;
+            width: 200px;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
             mix-blend-mode: normal;
             opacity: 0.3;
             filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
@@ -121,7 +121,7 @@
           cursor: pointer;
 
           &:hover .wrapper {
-            display: block;
+            opacity: 1;
           }
 
           & .pic {
@@ -174,7 +174,7 @@
             position: relative;
 
             &:hover .wrapper {
-              display: block;
+              opacity: 1;
             }
 
             & .full{
@@ -310,6 +310,12 @@
               & img{
                 width: 8px;
               }
+            }
+
+            & .gear{
+              width: 100px;
+              left: calc(50% - 50px);
+              top: calc(50% - 50px);
             }
           }
 

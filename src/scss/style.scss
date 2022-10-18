@@ -43,6 +43,7 @@ header{
     height: 26px;
     object-fit: contain;
     fill: #D2132A;
+    cursor: pointer;
   }
 
   & .right_head{
@@ -53,6 +54,7 @@ header{
       @include fonts(700, 12px, 13px, #FFEFF6);
       text-transform: uppercase;
       transition: all .5s ease-in-out;
+      cursor: pointer;
 
       &:hover {
         color: #D2132A;
@@ -73,6 +75,7 @@ header{
       height: 54px;
       border-radius: 50%;
       @include display-flex;
+      cursor: pointer;
 
       & img{
         width: 18px;

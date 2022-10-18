@@ -73,12 +73,16 @@ export const customCursor = (cont) => {
 }
 
 export const onChangeCursor = (el, classTarget) => {
-    document.querySelector(el)?.addEventListener("mouseover", ()=>{
+
+    const target = document.querySelector(el);
+    target.style.cursor = "none";
+
+    target?.addEventListener("mouseover", ()=>{
         const cursor = document.querySelector(".cursor");
         cursor.classList.add(classTarget);
     })
 
-    document.querySelector(el)?.addEventListener("mouseout", ()=>{
+    target?.addEventListener("mouseout", ()=>{
         const cursor = document.querySelector(".cursor");
         cursor.classList.remove(classTarget);
     })

@@ -412,6 +412,7 @@ section.main_parallax{
     @include display-flex;
     color: #FFEFF6;
     font-size: 12px;
+    cursor: none!important;
 
     &:after{
       content: "contact";
