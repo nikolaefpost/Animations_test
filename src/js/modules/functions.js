@@ -92,7 +92,7 @@ export const onChangeCursor = (el, classTarget) => {
 export const wipes = () => {
     let controller = new ScrollMagic.Controller({
         globalSceneOptions: {
-            addIndicators: false,
+            // addIndicators: false,
             triggerHook: 'onLeave',
             duration: "200%" // this works just fine with duration 0 as well
             // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
@@ -102,7 +102,7 @@ export const wipes = () => {
 
     let slides = document.querySelectorAll("section.panel");
 
-    for (let i=0; i<slides.length; i++) {
+    for (let i=0; i<slides.length-1; i++) {
         new ScrollMagic.Scene({
             triggerElement: slides[i]
         })
