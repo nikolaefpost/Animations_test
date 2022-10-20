@@ -2,7 +2,7 @@
 @import "_mixins";
 
 .do {
-  background: #170119;
+  background: $do_background;
   padding: 25px 3.8% 68px 3.8%;
   overflow: hidden;
   z-index: 11;
@@ -17,7 +17,7 @@
 
       & h2 {
         font-family: 'ArchivoBlack', sans-serif;
-        @include fonts(700, 40px, 40px, #FFFFFF);
+        @include fonts(700, 40px, 40px, $white);
       }
 
       & .item_block {
@@ -54,7 +54,7 @@
         }
 
         & .item_hover {
-          background: #B10217;
+          background: $do_red1;
 
 
           &:after {
@@ -63,7 +63,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
+            background: linear-gradient(318.4deg, $do_red1 8.31%, $do_red2 69.98%);
           }
 
 
@@ -334,7 +334,7 @@
 
 
           & span {
-            @include fonts(700, 36px, 46px, #FFFFFF);
+            @include fonts(700, 36px, 46px, $white);
             //transition: all 2s 1s  ease;
             text-align: center;
             animation-name: text;
@@ -346,7 +346,7 @@
 
           & a {
             font-family: 'ArchivoBlack', sans-serif;
-            @include fonts(700, 12px, 26px, #D2132A);
+            @include fonts(700, 12px, 26px, $anim_red);
             letter-spacing: 0.428571px;
             text-transform: uppercase;
             text-decoration: none;
@@ -433,7 +433,7 @@
         width: 50%;
 
         & h2 {
-          @include fonts(700, 20px, 20px, #FFFFFF);
+          @include fonts(700, 20px, 20px, $white);
         }
 
         & .item_block {
@@ -453,7 +453,7 @@
       & .do_left {
 
         & h2 {
-          @include fonts(700, 12px, 12px, #FFFFFF);
+          @include fonts(700, 12px, 12px, $white);
         }
 
         & .item_block {
@@ -499,12 +499,12 @@
           & .do_content {
 
             & span {
-              @include fonts(500, 16px, 16px, #FFFFFF);
+              @include fonts(500, 16px, 16px, $white);
             }
 
             & a {
               font-family: 'ArchivoBlack', sans-serif;
-              @include fonts(500, 8px, 16px, #D2132A);
+              @include fonts(500, 8px, 16px, $anim_red);
             }
           }
         }
@@ -522,7 +522,7 @@
         height: 50%;
 
         & h2 {
-          @include fonts(700, 12px, 12px, #FFFFFF);
+          @include fonts(700, 12px, 12px, $white);
         }
 
         & .item_block {

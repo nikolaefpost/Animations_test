@@ -5,15 +5,14 @@
 @import "main_first";
 @import "main_clients";
 @import "main_do";
-@import "footer";
-@import "main.team";
+@import "main_team";
 
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: Archivo;
+  font-family: Archivo, sans-serif;
 }
 
 /* Let's get this party started */
@@ -47,6 +46,7 @@ body{
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  //position: relative;
 }
 
 .panel{
@@ -65,7 +65,7 @@ header{
     width: 86px;
     height: 26px;
     object-fit: contain;
-    fill: #D2132A;
+    fill: $anim_red;
     cursor: pointer;
   }
 
@@ -74,13 +74,13 @@ header{
     gap: 22px;
 
     & span{
-      @include fonts(700, 12px, 13px, #FFEFF6);
+      @include fonts(700, 12px, 13px, $main-light);
       text-transform: uppercase;
       transition: all .5s ease-in-out;
       cursor: pointer;
 
       &:hover {
-        color: #D2132A;
+        color: $anim_red;
       }
 
       @keyframes animate {
@@ -111,11 +111,11 @@ header{
 
   & .white{
     & span{
-      color: #161415;
+      color: $dark_text;
     }
 
     & .menu{
-      background: white;
+      background: $white;
     }
   }
 

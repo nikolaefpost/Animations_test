@@ -2,7 +2,7 @@
 @import "_mixins";
 
 .clients {
-  background: #ffecee;
+  background: $light_background;
   padding: 25px 3.8% 68px 3.8%;
   overflow: hidden;
   z-index: 11;
@@ -24,12 +24,12 @@
 
     /* Track */
     &::-webkit-scrollbar-track {
-      background: #ffecee;
+      background: $light_background;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
-      background: #D2132A;
+      background: $anim_red;
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     }
     &::-webkit-scrollbar-thumb:window-inactive {
@@ -43,12 +43,12 @@
 
       & h2 {
         font-family: ArchivoBlack, sans-serif;
-        @include fonts(700, 40px, 40px, #383030);
+        @include fonts(700, 40px, 40px, $brown);
       }
 
       & p {
         margin-top: 22px;
-        @include fonts(400, 16px, 26px, #643C5A);
+        @include fonts(400, 16px, 26px, $label_pink);
         mix-blend-mode: normal;
         opacity: 0.5;
       }
@@ -56,7 +56,7 @@
       & a {
         margin-top: -9px;
         font-family: ArchivoBlack, sans-serif;
-        @include fonts(400, 12px, 26px, #D2132A);
+        @include fonts(400, 12px, 26px, $anim_red);
         letter-spacing: 0.428571px;
         text-transform: uppercase;
         text-decoration: none;
@@ -86,7 +86,7 @@
         & .wrapper {
           position: absolute;
           width: 100%;
-          background: #cc031c;
+          background: $hover_background;
           z-index: 2;
           opacity: 0;
           transition: all 1s ease-in-out;
@@ -95,7 +95,7 @@
 
           & h3{
             font-family: 'ArchivoBlack', sans-serif;
-            @include fonts(700, 12px, 17px, #FFFFFF);
+            @include fonts(700, 12px, 17px, $white);
             letter-spacing: 0.428571px;
             text-transform: uppercase;
             text-align: center;
@@ -104,7 +104,7 @@
           & div{
             margin-top: 35px;
             font-family: 'ArchivoBlack', sans-serif;
-            @include fonts(700, 20px, 17px, #FFFFFF);
+            @include fonts(700, 20px, 17px, $white);
             letter-spacing: 0.714286px;
             text-transform: uppercase;
             text-align: center;
@@ -114,7 +114,7 @@
             margin-top: 55px;
             @include display-flex;
             gap: 4px;
-            @include fonts(400, 12px, 13px, #FFFFFF);
+            @include fonts(400, 12px, 13px, $white);
             text-decoration: none;
 
             & img{
@@ -129,7 +129,7 @@
             top: calc(50% - 100px);
             mix-blend-mode: normal;
             opacity: 0.3;
-            filter: drop-shadow(-17px 22px 12px rgba(85, 9, 9, 0.320476));
+            filter: drop-shadow(-17px 22px 12px $shadow2);
           }
         }
 
@@ -155,19 +155,19 @@
           & span {
             position: relative;
             z-index: 1;
-            @include fonts(400, 16px, 17px, #383030);
+            @include fonts(400, 16px, 17px, $brown);
           }
 
           & .xl {
-            height: 260px;
+            height: 260px!important;
           }
 
           & .l {
-            height: 243px;
+            height: 243px!important;
           }
 
           & .m {
-            height: 197px;
+            height: 197px!important;
             object-position: 20% 50%;
           }
         }
@@ -181,7 +181,7 @@
             background: #000000;
           }
           .pink {
-            background: #DA89C6;
+            background: $light_pink;
           }
 
           & .container {
@@ -207,7 +207,7 @@
           }
 
           & span {
-            @include fonts(400, 16px, 17px, #383030);
+            @include fonts(400, 16px, 17px, $brown);
           }
         }
       }
@@ -281,16 +281,16 @@
         position: sticky;
 
         & h2 {
-          @include fonts(700, 18px, 20px, #383030);
+          @include fonts(700, 18px, 20px, $brown);
         }
 
         & p {
           margin-top: 12px;
-          @include fonts(400, 12px, 14px, #643C5A);
+          @include fonts(400, 12px, 14px, $label_pink);
         }
 
         & a {
-          @include fonts(400, 8px, 20px, #D2132A);
+          @include fonts(400, 8px, 20px, $anim_red);
         }
       }
 
@@ -314,17 +314,17 @@
             padding: 16px 12px;
 
             & h3{
-              @include fonts(700, 8px, 12px, #FFFFFF);
+              @include fonts(700, 8px, 12px, $white);
             }
 
             & div{
               margin-top: 12px;
-              @include fonts(700, 14px, 14px, #FFFFFF);
+              @include fonts(700, 14px, 14px, $white);
             }
 
             & a{
               margin-top: 20px;
-              @include fonts(400, 8px, 12px, #FFFFFF);
+              @include fonts(400, 8px, 12px, $white);
 
               & img{
                 width: 8px;
@@ -351,7 +351,7 @@
 
 
             & span {
-              @include fonts(400, 12px, 13px, #383030);
+              @include fonts(400, 12px, 13px, $brown);
             }
 
             & .xl {
@@ -382,7 +382,7 @@
             }
 
             & span {
-              @include fonts(400, 12px, 13px, #383030);
+              @include fonts(400, 12px, 13px, $brown);
             }
           }
         }
@@ -448,18 +448,18 @@
              padding: 33px 24px;
 
             & h3{
-              @include fonts(700, 12px, 17px, #FFFFFF);
+              @include fonts(700, 12px, 17px, $white);
 
             }
 
             & div{
               margin-top: 35px;
-              @include fonts(700, 20px, 17px, #FFFFFF);
+              @include fonts(700, 20px, 17px, $white);
             }
 
             & a{
               margin-top: 55px;
-              @include fonts(400, 12px, 13px, #FFFFFF);
+              @include fonts(400, 12px, 13px, $white);
 
               & img{
                 width: 12px;
@@ -485,7 +485,7 @@
             & span {
               position: relative;
               z-index: 1;
-              @include fonts(400, 16px, 17px, #383030);
+              @include fonts(400, 16px, 17px, $brown);
             }
 
             & .xl {
@@ -517,7 +517,7 @@
             }
 
             & span {
-              @include fonts(400, 16px, 17px, #383030);
+              @include fonts(400, 16px, 17px, $brown);
             }
           }
         }

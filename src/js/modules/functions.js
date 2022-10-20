@@ -165,27 +165,25 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
     }else {
         amountSlides = 1;
     }
+    console.log(amountSlides)
 
-
-    const RrevEl = document.querySelector(prev);
-    const NextEl = document.querySelector(next);
+    const prevEl = document.querySelector(prev);
+    const nextEl = document.querySelector(next);
     const sliderEl = document.querySelector(slider);
 
     let widthWindows, cardWidth
 
     if (window.innerWidth>400){
-        widthWindows = window.innerWidth*0.94 - 226;
+        widthWindows = window.innerWidth*.92 - 226;
         cardWidth = (widthWindows - 17*(amountSlides-1))/amountSlides;
     }else {
-        widthWindows = window.innerWidth*0.94;
+        widthWindows = window.innerWidth*.92;
         cardWidth = widthWindows*.8;
     }
-
+    console.log(window.innerWidth)
 
     const baseShift = cardWidth + 17
-
     const allSlidesWidth = teamMemberPath.length*baseShift-17;
-
     let shiftWidth = 0;
 
     if (sliderEl) sliderEl.innerHTML = teamMemberPath.reduce((accum, current)=>{
@@ -194,24 +192,23 @@ export const sliderMove = (prev, next, slider,teamMemberPath) => {
     }, "");
 
 
-    NextEl?.addEventListener("click", () => {
-        console.log(shiftWidth < allSlidesWidth - widthWindows)
+    nextEl?.addEventListener("click", () => {
 
-        if(shiftWidth < allSlidesWidth - widthWindows){
-            RrevEl.classList.remove("border_slide");
+        if(shiftWidth < allSlidesWidth - widthWindows - baseShift){
+            prevEl.classList.remove("border_slide");
             shiftWidth += baseShift;
             sliderEl.style.left = `${-shiftWidth}px`
         }
-        if (shiftWidth >= allSlidesWidth - widthWindows) NextEl.classList.add("border_slide");
+        if (shiftWidth >= allSlidesWidth - widthWindows - baseShift) nextEl.classList.add("border_slide");
     })
 
-    RrevEl?.addEventListener("click", () => {
+    prevEl?.addEventListener("click", () => {
 
         if(shiftWidth > 0){
-            NextEl.classList.remove("border_slide");
+            nextEl.classList.remove("border_slide");
             shiftWidth -= baseShift;
             sliderEl.style.left = `${-shiftWidth}px`
         }
-        if (shiftWidth === 0) RrevEl.classList.add("border_slide");
+        if (shiftWidth === 0) prevEl.classList.add("border_slide");
     })
 }

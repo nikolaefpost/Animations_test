@@ -2,7 +2,7 @@
 @import "_mixins";
 
 .team{
-  background: #ffecee;
+  background: $light_background;
   padding: 3vh 4vw 22vh 4vw;
   position: relative;
   z-index: 12;
@@ -11,15 +11,15 @@
     margin-top: -8px;
     text-align: center;
     font-family: 'ArchivoBlack', sans-serif;
-    @include fonts(700, 40px, 40px, #383030);
+    @include fonts(700, 40px, 40px, $brown);
     text-transform: uppercase;
 
     @media screen and (max-width: 1200px){
-      @include fonts(700, 30px, 30px, #383030);
+      @include fonts(700, 30px, 30px, $brown);
     }
 
     @media screen and (max-width: 400px){
-      @include fonts(700, 20px, 20px, #383030);
+      @include fonts(700, 20px, 20px, $brown);
     }
   }
 
@@ -51,14 +51,14 @@
       height: 76px;
       border-radius: 50%;
       @include display-flex;
-      @include fonts(700, 12px, 13px, #161415);
+      @include fonts(700, 12px, 13px, $dark_text);
       text-transform: uppercase;
       cursor: pointer;
     }
 
     .border_slide{
-      background: #D2132A;
-      color: white;
+      background: $anim_red;
+      color: $white;
     }
 
     & .slider{
@@ -112,14 +112,14 @@
 
           & h3{
             font-family: 'ArchivoBlack', sans-serif;
-            @include fonts(700, 12px, 17px, #FFFFFF);
+            @include fonts(700, 12px, 17px, $white);
             letter-spacing: 0.428571px;
             text-transform: uppercase;
           }
 
           & h4{
             margin-top: 10px;
-            @include fonts(400, 12px, 13px, #FFFFFF);
+            @include fonts(400, 12px, 13px, $white);
           }
         }
       }
@@ -190,14 +190,14 @@
 
             & h3{
               font-family: 'ArchivoBlack', sans-serif;
-              @include fonts(700, 12px, 17px, #FFFFFF);
+              @include fonts(700, 12px, 17px, $white);
               letter-spacing: 0.428571px;
               text-transform: uppercase;
             }
 
             & h4{
               margin-top: 10px;
-              @include fonts(400, 12px, 13px, #FFFFFF);
+              @include fonts(400, 12px, 13px, $white);
             }
           }
         }
@@ -290,12 +290,11 @@
     & .contact{
       height: 18.8vh;
       @include display-flex;
-      background: #170119;
+      background: $do_background;
       position: relative;
 
       &:hover{
         & .red_block{
-          right: 0;
           width: 100%;
         }
 
@@ -312,10 +311,9 @@
         width: 0;
         height: 100%;
         top: 0;
-        right: -100%;
+        right: 0;
         transition: all .5s ease-in-out;
-        background-image: linear-gradient(313.37deg, #B10217 10.23%, #DD041F 69.59%);
-        //background-position: 50% 0%;
+        background-image: linear-gradient(313.37deg, $do_red1 10.23%, $do_red2 69.59%);
         z-index: 1;
       }
 
@@ -323,7 +321,7 @@
         text-decoration: none;
         @include display-flex;
         gap: 12px;
-        @include fonts(700, 32px, 46px, #FFFFFF);
+        @include fonts(700, 32px, 46px, $white);
         cursor: pointer;
         position: relative;
         z-index: 2;
@@ -338,10 +336,10 @@
     & .made{
       padding: 9px 55px 6px;
       @include display-flex(space-between);
-      background: #170119;
+      background: $do_background;
 
       & .made_right{
-        @include fonts(400, 14px, 26px, #FFFFFF);
+        @include fonts(400, 14px, 26px, $white);
         mix-blend-mode: normal;
         opacity: 0.98;
       }
@@ -349,7 +347,7 @@
       & .made_left{
         @include display-flex;
         gap: 14px;
-        @include fonts(700, 12px, 26px, #FFFFFF);
+        @include fonts(700, 12px, 26px, $white);
         text-transform: uppercase;
       }
     }
@@ -361,7 +359,7 @@
 
         & a{
           gap: 8px;
-          @include fonts(700, 18px, 24px, #FFFFFF);
+          @include fonts(700, 18px, 24px, $white);
 
           & img{
             width: 18px;
@@ -372,16 +370,16 @@
       .made{
         padding: 9px 55px 6px;
         @include display-flex(space-between);
-        background: #170119;
+        background: $do_background;
 
         & .made_right{
-          @include fonts(400, 12px, 13px, #FFFFFF);
+          @include fonts(400, 12px, 13px, $white);
 
         }
 
         & .made_left{
           gap: 14px;
-          @include fonts(700, 8px, 13px, #FFFFFF);
+          @include fonts(700, 8px, 13px, $white);
 
           & img{
             width: 12px;

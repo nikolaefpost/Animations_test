@@ -3,7 +3,7 @@
 
 section.main_parallax{
 
-  background: radial-gradient(48.18% 24.84% at 50% 50%, #2A0227 0%, #170119 100%);
+  background: radial-gradient(48.18% 24.84% at 50% 50%, $violet 0%, $dark_violet 100%);
   padding: 25px 56px 0 55px;
   overflow: hidden;
   cursor: none;
@@ -20,6 +20,7 @@ section.main_parallax{
     opacity: 0.75;
     z-index: 1;
     border-radius: 50%;
+    background: rgba(245, 64, 137, 4e-05);
   }
 
   & .main_title {
@@ -47,13 +48,13 @@ section.main_parallax{
         //position: absolute;
         -webkit-transform: translateZ(0);
         -moz-transform: translateZ(0);
-        @include fonts(700, 12px, 13px, #F9A608);
+        @include fonts(700, 12px, 13px, $yellow);
         text-transform: uppercase;
       }
 
       & h1 {
         font-family: ArchivoBlack, sans-serif;
-        @include fonts(600, 170px, 199px, #FFEFF6);
+        @include fonts(600, 170px, 199px, $main-light);
         text-align: center;
         text-transform: uppercase;
         -webkit-transform: translateZ(40px);
@@ -275,7 +276,7 @@ section.main_parallax{
     width: 8.3%;
     object-fit: cover;
     z-index: 4;
-    filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
+    filter: drop-shadow(-24px -10px 20px $shadow);
     transform: rotate(-5deg);
     animation-name: ring;
   }
@@ -347,7 +348,7 @@ section.main_parallax{
     width: 4.7%;
     object-fit: cover;
     z-index: 4;
-    filter: drop-shadow(-24px -10px 20px rgba(97, 9, 8, 0.174088));
+    filter: drop-shadow(-24px -10px 20px $shadow);
     animation-name: note;
   }
 
@@ -380,16 +381,16 @@ section.main_parallax{
     gap: 9px;
 
     & .label {
-      @include fonts(400, 14px, 15px, #643C5A);
+      @include fonts(400, 14px, 15px, $label_pink);
       margin-bottom: 2px;
     }
 
     & .value {
-      @include fonts(700, 30px, 33px, #F6F6F6);
+      @include fonts(700, 30px, 33px, $main-light);
     }
 
     & .viewers {
-      @include fonts(500, 14px, 15px, #F6F6F6);
+      @include fonts(500, 14px, 15px, $main-light);
     }
   }
 
@@ -398,7 +399,7 @@ section.main_parallax{
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #D2132A;
+    background: $anim_red;
     transition-duration: .5s;
     transition-property: width, height, font-size;
     transition-timing-function: ease-in-out;
@@ -410,7 +411,7 @@ section.main_parallax{
     width: 70px;
     height: 70px;
     @include display-flex;
-    color: #FFEFF6;
+    color: $main-light;
     font-size: 12px;
     cursor: none!important;
 
@@ -424,7 +425,7 @@ section.main_parallax{
     width: 70px;
     height: 70px;
     @include display-flex;
-    color: #FFEFF6;
+    color: $main-light;
     font-size: 12px;
 
     &:after{
@@ -436,7 +437,7 @@ section.main_parallax{
   & .hover_floaat{
     width: 30px;
     height: 30px;
-    background: #FFEFF6;
+    background: $main-light;
   }
 
   @media screen and (max-width: 1200px){
@@ -446,7 +447,7 @@ section.main_parallax{
         margin: 60px;
 
         & h1 {
-          @include fonts(600, 100px, 120px, #FFEFF6);
+          @include fonts(600, 100px, 120px, $main-light);
         }
 
         & img {
@@ -466,7 +467,7 @@ section.main_parallax{
         margin: 40px 40px 100px;
 
         & h1 {
-          @include fonts(600, 50px, 60px, #FFEFF6);
+          @include fonts(600, 50px, 60px, $main-light);
         }
 
         & img {
@@ -483,15 +484,15 @@ section.main_parallax{
       gap: 6px;
 
       & .label {
-        @include fonts(400, 12px, 13px, #643C5A);
+        @include fonts(400, 12px, 13px, $label_pink);
       }
 
       & .value {
-        @include fonts(700, 20px, 24px, #F6F6F6);
+        @include fonts(700, 20px, 24px, $main-light);
       }
 
       & .viewers {
-        @include fonts(500, 12px, 13px, #F6F6F6);
+        @include fonts(500, 12px, 13px, $main-light);
       }
     }
   }
@@ -506,7 +507,7 @@ section.main_parallax{
         margin: 40px 40px 100px;
 
         & h1 {
-          @include fonts(600, 36px, 60px, #FFEFF6);
+          @include fonts(600, 36px, 60px, $main-light);
         }
 
         & img {
